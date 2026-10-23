@@ -1,0 +1,55 @@
+﻿<Window x:Class="KursClient.Views.AddEditPassenger"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursClient.Views"
+        mc:Ignorable="d"
+        Background="#333"
+        Title="Добавление Пассажира" Height="610" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Label Content="Выберите Номер рейса" Margin="20 0" Foreground="White"/>
+            <ComboBox x:Name="NumberFlightsComboBox" Margin="10"
+                DisplayMemberPath="NumberFlight" SelectedValuePath="NumberFlight"
+                SelectedValue="{Binding NumberFlight}" />
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label Content="Введите Имя" Margin="20 0" Foreground="White"/>
+            <TextBox x:Name="FirstName" Text="{Binding FirstName}" Margin="20 15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Label Content="Введите Фамилию" Margin="20 0" Foreground="White"/>
+            <TextBox x:Name="SurName" Text="{Binding SurName}"  Margin="20 15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Label Content="Введите Отчество" Margin="20 0" Foreground="White"/>
+            <TextBox x:Name="LastName" Text="{Binding LastName}"  Margin="20 15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4">
+            <Label Content="Введите Серию документа" Margin="20 0" Foreground="White"/>
+            <TextBox x:Name="DocumentSerial" Text="{Binding DocumentSerial}" Margin="20 15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5">
+            <Label Content="Введите Номер документа" Margin="20 0" Foreground="White"/>
+            <TextBox x:Name="DocumentNumber" Text="{Binding DocumentNumber}" Grid.Row="4" Margin="20 15"/>
+        </StackPanel>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="OK" Grid.Column="0" Margin="20 10" Height="50" Click="Button_Click" Style="{StaticResource DialogStyle}"/>
+            <Button Content="Cancel" Grid.Column="1" Margin="20 10" Height="50" Click="Button_Click_1" Style="{StaticResource DialogStyle}"/>
+        </Grid>
+    </Grid>
+</Window>
